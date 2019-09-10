@@ -1,6 +1,7 @@
 "use strict";
 
-(function(){
+
+    function animationFunction(){
     var timeInterval = 250;
     var loopVariable = 0;
     var timerID = null;
@@ -8,6 +9,7 @@
     var animationStarted = false;
 
     window.onload = function(){
+        // document.getElementsByTagName("h1")[0].innerText = "abebe";
         var startElem = document.getElementById("start");
         var stopElem = document.getElementById("stop");
         var animationElem = document.getElementById("animation");
@@ -57,7 +59,7 @@
         var animationElem = document.getElementById("animation");
         var textElem = document.getElementById("text");
         var selected = animationElem.options[animationElem.selectedIndex].text;
-        if(selected != "custom"){
+        if(selected !== "custom"){
             textElem.value = ANIMATIONS[selected];
         }
     }
@@ -82,4 +84,5 @@
             timerID = setInterval(display, timeInterval);
         }
     }
-})();
+}
+animationFunction();
